@@ -2,6 +2,7 @@ package git
 
 import (
 	"fmt"
+	"os"
 	"os/exec"
 	"strings"
 )
@@ -15,7 +16,7 @@ func IsRemoteURL(target string) bool {
 
 // Clone performs a shallow clone of a git repository
 func Clone(url, dest string) error {
-	fmt.Fprintf(nil, "Cloning %s …\n", url)
+	fmt.Fprintf(os.Stderr, "Cloning %s …\n", url)
 	cmd := exec.Command("git", "clone", "--depth", "1", "--quiet", url, dest)
 	output, err := cmd.CombinedOutput()
 	if err != nil {
