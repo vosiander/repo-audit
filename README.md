@@ -22,7 +22,7 @@ brew install repoaudit
 ### From Source
 
 ```bash
-go install github.com/vosiander/repoaudit@latest
+go install github.com/vosiander/repo-audit@latest
 ```
 
 ### Binary Releases
